@@ -1,12 +1,11 @@
-import express, { Request, Response } from "express";
+import { ApolloServer } from "apollo-server";
+import { readFileSync } from "fs";
+import { resolvers } from "./resolvers";
 
-const app = express();
-const PORT = 3000;
+const typeDefs = readFileSync("./src/type/schema.graphql", { encoding: "utf-8" });
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!!");
-});
+const server = new ApolloServer({ typeDefs, resolvers });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://127.0.0.1:${PORT}`);
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
 });

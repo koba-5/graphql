@@ -1,0 +1,37 @@
+scalar DateTime
+
+type Todo {
+  id: Int!
+  title: String!
+  content: String!
+}
+
+input GetTodoByIdInput {
+  id: Int!
+}
+
+type Query {
+  getTodos: [Todo!]!
+  getTodoById(input: GetTodoByIdInput!): Todo!
+}
+
+input AddTodoInput {
+  title: String!
+  content: String!
+}
+
+input UpdateTodoByIdInput {
+  id: Int!
+  title: String!
+  content: String!
+}
+
+input DeleteTodoByIdInput {
+  id: Int!
+}
+
+type Mutation {
+  addTodo(input: AddTodoInput!): Int!
+  updateTodoById(input: UpdateTodoByIdInput!): Int!
+  deleteTodoById(input: DeleteTodoByIdInput!): Int!
+}
