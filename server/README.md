@@ -1,4 +1,4 @@
-# server
+# graphql/server
 
 ## server 配下について
 
