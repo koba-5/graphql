@@ -1,0 +1,7 @@
+query GetTodoById($input: GetTodoByIdInput!) {
+    getTodoById(input: $input) {
+        content
+        id
+        title
+    }
+}

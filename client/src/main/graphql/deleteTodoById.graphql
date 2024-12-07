@@ -1,0 +1,3 @@
+mutation DeleteTodoById($input: DeleteTodoByIdInput!) {
+  deleteTodoById(input: $input)
+}
